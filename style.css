@@ -1,0 +1,24 @@
+button{
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    margin: 20px;   
+}
+.icons{
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+#selection{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 50vh;
+}
+h1{
+    position: relative;
+    top: 54vh;
+    display: flex;
+    justify-content: center;
+}
