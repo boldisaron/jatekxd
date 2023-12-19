@@ -5,20 +5,14 @@ button{
     cursor: pointer;
     margin: 20px;
     transition: 0.3s;
+    background: none;
 }
 button:hover{
     transform: translateY(-5px);
 }
 .icons{
-    position: relative;
     width: 70px;
     height: 70px;
-}
-#selection{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    top: 50vh;
 }
 #selectionText{
     position: relative;
@@ -26,10 +20,7 @@ button:hover{
     display: flex;
     justify-content: center;
 }
-#UserSelectionBox{
-    position: fixed;
-    top: 15vh;
-    left: 40vh;
+#UserSelectionBox{  
     width: 150px;
     height: 150px;
     border: 1px black solid;
@@ -38,4 +29,8 @@ button:hover{
     position: relative;
     bottom: 7vh;
     right: 5px;
+}
+.container{
+    position: relative;
+    top: 40vh;
 }
