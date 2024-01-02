@@ -20,10 +20,15 @@ button:hover{
     display: flex;
     justify-content: center;
 }
-#SelectionBox{  
+#SelectionBoxCpu{  
     width: 150px;
     height: 150px;
-    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+#SelectionBoxUser{  
+    width: 150px;
+    height: 150px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 .BoxTextUser{
     position: relative;
@@ -33,15 +38,16 @@ button:hover{
 .BoxTextCpu{
     position: relative;
     bottom: 55px;
-    left: 30px;
 }
 .container{
     position: relative;
-    top: 40vh;
+    top: 20vh;
+    padding: 200px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 @keyframes cpuShake {
     50% {
-      transform: rotate(-10deg);
+      transform: rotate(-10deg) rotateY(180deg);
     }
   }
 .cpuShake{
@@ -60,14 +66,15 @@ button:hover{
     height: 90px;
     position: relative;
     bottom: 25px;
-    left: 30px;
-    transform: rotate(-90deg);
+    transform: rotate(-90deg) rotateY(180deg);
 }
 #boxImgUser{
     width: 90px;
     height: 90px;
     position: relative;
     bottom: 25px;
-    left: 30px;
     transform: rotate(90deg);
+}
+.score{
+    position: relative;
 }

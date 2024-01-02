@@ -1,6 +1,8 @@
 let userSelection = null;
 let cpuRoll = null;
 let imgNum = null;
+let cpuScore = 0;
+let userScore = 0;
 let outcomes = {
     RR: "Döntetlen",
     RP: "Cpu",
@@ -16,18 +18,23 @@ let choices = ["R", "P", "S"];
 let images = ["img/rock.svg", "img/paper.svg", "img/scissors.svg"];
 const cpuImg = document.getElementById("boxImgCpu");
 const userImg = document.getElementById("boxImgUser");
-
+const win = "rgba(37, 218, 1, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset";
+const loss = "rgba(218, 1, 1, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset"
+const defaultBoxShadow = "rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset"
 
 document.getElementById("rock").addEventListener("click", function(){
     userSelection = "R";
+    resetBoxShadow();
     Roll(userSelection);       
 });
 document.getElementById("paper").addEventListener("click", function(){
     userSelection = "P";
+    resetBoxShadow();
     Roll(userSelection);        
 });
 document.getElementById("scissors").addEventListener("click", function(){
     userSelection = "S";
+    resetBoxShadow();
     Roll(userSelection);
 });
 
@@ -62,9 +69,25 @@ function Roll(userSelection){
         }
         else{
             document.getElementById("resultText").textContent = outcome + " nyert!";
+            if(outcome == "Cpu"){
+                document.getElementById("SelectionBoxUser").style.boxShadow = loss;
+                document.getElementById("SelectionBoxCpu").style.boxShadow = win;
+                cpuScore++;
+                document.getElementById("cpuScore").textContent = cpuScore;
+            }
+            else{
+                document.getElementById("SelectionBoxUser").style.boxShadow = win;
+                document.getElementById("SelectionBoxCpu").style.boxShadow = loss;
+                userScore++;
+                document.getElementById("userScore").textContent = userScore;
+            }
         }
-    }, 3000);
+    }, 2500);
+};
 
+function resetBoxShadow(){
+    document.getElementById("SelectionBoxUser").style.boxShadow = defaultBoxShadow;
+    document.getElementById("SelectionBoxCpu").style.boxShadow = defaultBoxShadow;
 }
     
 
