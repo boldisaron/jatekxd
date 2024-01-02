@@ -1,20 +1,49 @@
-let user_selection = null;
+let userSelection = null;
 let cpuRoll = null;
+let outcomes = {
+    RR: "Döntetlen",
+    RP: "Cpu",
+    RS: "Felhasználó",
+    PP: "Döntetlen",
+    PR: "Felhasználó",
+    PS: "Cpu",
+    SS: "Döntetlen",
+    SR: "Cpu",
+    SP: "Felhasználó",
+  };
+let choices = ["R", "P", "S"];
+let images = ["img/rock.svg", "img/paper.svg", "img/scissors.svg"];
+const cpuImg = document.getElementById("boxImgCpu");
+const userImg = document.getElementById("boxImgUser");
+
 
 document.getElementById("rock").addEventListener("click", function(){
-    user_selection = 1;
-    cpuRoll = cpuSelection();
+    userSelection = "R";
+    Roll(userSelection);       
 });
 document.getElementById("paper").addEventListener("click", function(){
-    user_selection = 2;
-    cpuRoll = cpuSelection();
+    userSelection = "P";
+    Roll(userSelection);        
 });
 document.getElementById("scissors").addEventListener("click", function(){
-    user_selection = 3;
-    cpuRoll = cpuSelection();
+    userSelection = "S";
+    Roll(userSelection);
 });
 
-function cpuSelection(){
-    let cpuRoll = Math.floor(Math.random() * 3) + 1;
-    return cpuRoll;
+function Roll(userSelection){
+    let cpuRoll = Math.floor(Math.random() * 3);
+    let outcome = outcomes[userSelection + choices[cpuRoll]];
+    console.log(outcome);
+
+    cpuImg.classList.add('cpuShake');
+    userImg.classList.add('userShake');
+
+    setTimeout(function (){
+        userImg.classList.remove('userShake');
+        cpuImg.classList.remove('cpuShake');
+        document.getElementById("resultText").textContent = outcome;
+    }, 3000);
+
 }
+    
+

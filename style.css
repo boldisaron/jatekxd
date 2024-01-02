@@ -20,17 +20,54 @@ button:hover{
     display: flex;
     justify-content: center;
 }
-#UserSelectionBox{  
+#SelectionBox{  
     width: 150px;
     height: 150px;
-    border: 1px black solid;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
-.BoxText{
+.BoxTextUser{
     position: relative;
-    bottom: 7vh;
-    right: 5px;
+    bottom: 55px;
+    right: 20px;
+}
+.BoxTextCpu{
+    position: relative;
+    bottom: 55px;
+    left: 30px;
 }
 .container{
     position: relative;
     top: 40vh;
+}
+@keyframes cpuShake {
+    50% {
+      transform: rotate(-10deg);
+    }
+  }
+.cpuShake{
+    animation: cpuShake 0.5s ease infinite
+}
+@keyframes userShake {
+    50% {
+      transform: rotate(10deg);
+    }
+}
+.userShake{
+    animation: userShake 0.5s ease infinite;
+}
+#boxImgCpu{
+    width: 90px;
+    height: 90px;
+    position: relative;
+    bottom: 25px;
+    left: 30px;
+    transform: rotate(-90deg);
+}
+#boxImgUser{
+    width: 90px;
+    height: 90px;
+    position: relative;
+    bottom: 25px;
+    left: 30px;
+    transform: rotate(90deg);
 }
