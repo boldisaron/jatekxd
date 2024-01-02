@@ -28,7 +28,7 @@ button:hover{
 .BoxTextUser{
     position: relative;
     bottom: 55px;
-    right: 20px;
+    left: 10    px;
 }
 .BoxTextCpu{
     position: relative;
